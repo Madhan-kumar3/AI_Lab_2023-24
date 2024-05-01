@@ -1,6 +1,6 @@
 # Ex.No: 10  Logic Programming –  Simple queries from facts and rules
-### DATE: 30.03.2024                                                                           
-### REGISTER NUMBER : 
+### DATE:30.03.2024                                                                            
+### REGISTER NUMBER :212221060206
 ### AIM: 
 To write a prolog program to find the answer of query. 
 ###  Algorithm:
@@ -22,22 +22,17 @@ Construct the FOL representation for the following sentences <br>
    Convert into clause form and Prove that John like Apple by using Prolog. <br> 
 ### Program:
 ```
-likes(john,X):- 
- food(X). 
-eats(bill,X):- 
- eats(sue,X). 
-eats(Y,X):- 
- food(X). 
+likes(john,X):- food(X). 
+eats(bill,X):- eats(sue,X). 
+eats(Y,X):- food(X). 
 eats(bill,peanuts). 
 food(apple). 
-food(chicken). 
+food(chicken). 
 food(peanuts).
 ```
 
-
 ### Output:
-![Screenshot (656)](https://github.com/PoornimaKumar29/AI_Lab_2023-24/assets/106436734/d799ce7e-a313-4be4-99da-ef5fea629965)
-
+![image](https://github.com/Rajesh242004/AI_Lab_2023-24/assets/117814063/27ba0386-2e74-47af-afc3-5783dd04ed48)
 
 ### Task 2:
 Consider the following facts and represent them in predicate form: <br>              
@@ -49,18 +44,14 @@ Convert the facts in predicate form to clauses and then prove by resolution: “
 
 ### Program:
 ```
-likes(steve,X):-
-     easycourse(X).
-hard(sciencecourse).
-easycourse(X):-
-          course(X,dept(havefun)).
+likes(steve,X):- easycourse(X). 
+hard(sciencecourse). 
+easycourse(X):- course(X,dept(havefun)). 
 course(bk301,dept(havefun)).
 ```
 
-
 ### Output:
-![Screenshot (657)](https://github.com/PoornimaKumar29/AI_Lab_2023-24/assets/106436734/ff5eb227-8595-41f8-937a-ce136bfb6cea)
-
+![image](https://github.com/Rajesh242004/AI_Lab_2023-24/assets/117814063/a0136dad-8dd2-4f01-9012-640c02509a15)
 
 ### Task 3:
 Consider the statement <br> 
@@ -68,30 +59,18 @@ Consider the statement <br>
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
 ```
-criminal(X):-
-	american(X),
-	weapon(Y),
-	hostile(Z),
-	sells(X,Y,Z).
-weapon(Y):-
-                 missile(Y).
-hostile(Z):-
-                 enemy(Z,X).
-
-sells(west,Y,nano):-
-	missile(Y),
-	owns(nano,Y).
-
-missile(m).
-owns(nano,m).
-enemy(nano,america).
+criminal(X):- american(X), weapon(Y), hostile(Z), sells(X,Y,Z). 
+weapon(Y):- missile(Y). 
+hostile(Z):- enemy(Z,X). 
+sells(west,Y,nano):- missile(Y), owns(nano,Y). 
+missile(m). 
+owns(nano,m). 
+enemy(nano,america). 
 american(west).
 ```
 
-
 ### Output:
-![Screenshot (658)](https://github.com/PoornimaKumar29/AI_Lab_2023-24/assets/106436734/914d5c62-569a-4139-b108-a88f75dc38e5)
-
+![image](https://github.com/Rajesh242004/AI_Lab_2023-24/assets/117814063/e11ab240-27dd-48e6-9dea-abb928347b5a)
 
 ### Result:
 Thus the prolog programs were executed successfully and the answer of query was found.
