@@ -1,5 +1,5 @@
 # Ex.No: 4   Implementation of Alpha Beta Pruning 
-### DATE: 21.02.2024                                                                          
+### DATE: 04.03.2024                                                                           
 ### REGISTER NUMBER : 212221040090
 ### AIM: 
 Write a Alpha beta pruning algorithm to find the optimal value of MAX Player from the given graph.
@@ -15,62 +15,52 @@ Write a Alpha beta pruning algorithm to find the optimal value of MAX Player fro
 9.  Stop the program. 
 
 ### Program:
-# Initial values of Alpha and Beta
-MAX, MIN = 1000, -1000
- 
-# Returns optimal value for current player
-#(Initially called for root and maximizer)
-def minimax(depth, nodeIndex, maximizingPlayer,
-            values, alpha, beta):
-  
-    # Terminating condition. i.e
-    # leaf node is reached
-    if depth == 3:
-        return values[nodeIndex]
- 
-    if maximizingPlayer:
-      
-        best = MIN
- 
-        # Recur for left and right children
-        for i in range(0, 2):
-             
-            val = minimax(depth + 1, nodeIndex * 2 + i,
-                          False, values, alpha, beta)
-            best = max(best, val)
-            alpha = max(alpha, best)
- 
-            # Alpha Beta Pruning
-            if beta <= alpha:
-                break
-          
-        return best
-      
-    else:
-        best = MAX
- 
-        # Recur for left and
-        # right children
-        for i in range(0, 2):
-          
-            val = minimax(depth + 1, nodeIndex * 2 + i,
-                            True, values, alpha, beta)
-            best = min(best, val)
-            beta = min(beta, best)
- 
-            # Alpha Beta Pruning
-            if beta <= alpha:
-                break
-          
-        return best
-      
-values = [3, 5, 6, 9, 1, 2, 0, -1] 
-print("The optimal value is :", minimax(0, 0, True, values, MIN, MAX))
+
+```
+# Python program to demonstrate working of Alpha-Beta Pruning 
+# Initial values of Alpha and Beta 
+MAX, MIN = 1000, -1000 
+# Returns optimal value for current player 
+#(Initially called for root and maximizer) 
+def minimax(depth, nodeIndex, maximizingPlayer, values, alpha, beta): 
+# Terminating condition. i.e 
+# leaf node is reached 
+if depth == 3: 
+return values[nodeIndex] 
+if maximizingPlayer: 
+best = MIN 
+# Recur for left and right children 
+for i in range(0, 2): 
+val = minimax(depth + 1, nodeIndex * 2 + i, False, values, alpha, beta)
+ best = max(best, val) 
+alpha = max(alpha, best)
+# Alpha Beta Pruning 
+if beta <= alpha: 
+break 
+return best 
+else: 
+best = MAX 
+# Recur for left and 
+# right children 
+for i in range(0, 2): 
+val = minimax(depth + 1, nodeIndex * 2 + i, 
+True, values, alpha, beta) 
+best = min(best, val) 
+beta = min(beta, best) 
+# Alpha Beta Pruning 
+if beta <= alpha: 
+break 
+return best 
+# Driver Code 
+if __name__ == "__main__": 
+values = [3, 5, 6, 9, 1, 2, 0, -1]
+
+```
+
 
 ### Output:
-![Exp No4](https://github.com/Madhan-kumar3/AI_Lab_2023-24/assets/135995284/cfd343e9-a00f-4e53-a1da-64f07f8f6676)
 
-
+![image](https://github.com/Rajesh242004/AI_Lab_2023-24/assets/117814063/d6b6fdad-5447-4d81-a149-cba608e3702f)
 
 
 ### Result:
