@@ -1,5 +1,5 @@
-### Ex.No: 3  Implementation of Minimax Search
-### DATE: 21.02.2024                                                                           
+# Ex.No: 3  Implementation of Minimax Search
+### DATE: 24.02.2024                                                                           
 ### REGISTER NUMBER : 212221040090
 ### AIM: 
 Write a mini-max search algorithm to find the optimal value of MAX Player from the given graph.
@@ -15,32 +15,26 @@ Write a mini-max search algorithm to find the optimal value of MAX Player from t
 9. Stop the program. 
 
 ### Program:
-import math
-def minimax (curDepth, nodeIndex, maxTurn, scores,targetDepth):
-    # base case : targetDepth reached
-    if (curDepth == targetDepth):
-        return scores[nodeIndex]
-    if (maxTurn):
-        return max(minimax(curDepth + 1, nodeIndex * 2,False, scores, targetDepth),
-                   minimax(curDepth + 1, nodeIndex * 2 + 1,
-                    False, scores, targetDepth))
-     
-    else:
-        return min(minimax(curDepth + 1, nodeIndex * 2, True, scores, targetDepth),
-                   minimax(curDepth + 1, nodeIndex * 2 + 1,
-                     True, scores, targetDepth))
-     
-# Driver code
-scores = [3, 5, 2, 9, 12, 5, 23, 20]
-treeDepth = math.log(len(scores), 2) # calculate depth of node  log 8 (base 2) = 3)
-print("The optimal value is : ", end = "")
+```
+import math 
+def minimax (curDepth, nodeIndex, maxTurn, scores, targetDepth): 
+# base case : targetDepth reached 
+if (curDepth == targetDepth): 
+return scores[nodeIndex] 
+if (maxTurn): 
+return max(minimax(curDepth + 1, nodeIndex * 2, False, scores, targetDepth), minimax(curDepth + 1, nodeIndex * 2 + 1, False, scores, targetDepth)) 
+else: return min(minimax(curDepth + 1, nodeIndex * 2, True, scores, targetDepth), minimax(curDepth + 1, nodeIndex * 2 + 1, True, scores, targetDepth)) 
+# Driver code scores = [3, 5, 2, 9, 12, 5, 23, 20] 
+treeDepth = math.log(len(scores), 2) # calculate depth of node log 8 (base 2) = 3) 
+print("The optimal value is : ", end = "") 
 print(minimax(0, 0, True, scores, treeDepth))
+
+```
+
 ### Output:
-![MiniMax](https://github.com/Madhan-kumar3/AI_Lab_2023-24/assets/135995284/30285053-d026-4957-91e3-39e5f16b1e44)
 
-
+![3](https://github.com/Rajesh242004/AI_Lab_2023-24/assets/117814063/3b539d74-220b-452d-9635-55dbb02e475d)
 
 
 ### Result:
-
 Thus the optimum value of max player was found using minimax search.
